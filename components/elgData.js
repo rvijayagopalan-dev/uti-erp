@@ -1,0 +1,575 @@
+export const pillars = [
+  {
+    id: 1,
+    number: '01',
+    title: 'The Intelligence Gap',
+    subtitle: 'Why Current AI Falls Short',
+    icon: '⚠️',
+    equation: 'Sₜ = (Eₜ, Rₜ, Lₜ, Cₜ, Uₜ, Gₜ)',
+    equationLabel: 'Complete world state structure',
+    accent: '#f43f5e',
+    bg: 'from-rose-950/40 to-slate-900',
+    border: 'border-rose-900/40',
+    badge: 'bg-rose-950/60 text-rose-400 border-rose-800/50',
+    dot: 'bg-rose-500',
+    capabilities: ['Transient Memory', 'Hallucinations', 'No Causality', 'No Temporal Continuity', 'Black-Box Reasoning'],
+    quote: 'The problem is not that AI cannot learn. The problem is that it cannot remember, reason causally, or build a persistent model of a changing world.',
+    quoteSource: 'ELG Research Hypothesis',
+    connection: 'Perception & Encoding',
+    detail: {
+      overview: {
+        insight: 'The problem is not that AI cannot learn. The problem is that it cannot remember, reason causally, or build a persistent model of a changing world.',
+        summary: 'Modern transformer-based large language models achieve statistical language proficiency but suffer from foundational architectural constraints: transient context windows, absent persistent entity memory, inability to perform genuine causal interventions, and statistically plausible yet structurally ungrounded outputs. These are not bugs to be patched — they are architectural inevitabilities of the current paradigm.',
+        why: 'Transformers function as sequence prediction engines, compressing world knowledge into static parameter weights within fixed-length contexts. The systems lack persistent external memory for entity states, causal reasoning frameworks, and mechanisms for tracking world evolution between interactions. Scale alone cannot resolve these structural deficiencies.',
+        significance: 'The human-AI cognition disparity stems primarily from architectural differences rather than scale. Humans maintain persistent world models, reason causally about interventions, update beliefs iteratively, and articulate their reasoning processes. Bridging this gap requires a fundamentally different architecture — the Eternal Learning Graph.',
+      },
+      concepts: [
+        {
+          title: 'Transient Context Windows',
+          explanation: 'LLMs operate within fixed context windows — typically 4K to 128K tokens. Beyond this boundary, all information is lost. There is no persistent memory of previous conversations, entities encountered, or world state changes. Each session starts from zero, making true continual learning architecturally impossible without external memory systems.',
+        },
+        {
+          title: 'Hallucination & Confabulation',
+          explanation: 'LLMs generate statistically plausible text without access to grounded facts or world state. When queried about entities or events outside their training distribution, they confabulate — producing confident, coherent, but factually incorrect outputs. This is an absence of grounded entity memory and factual anchoring, not a calibration problem.',
+        },
+        {
+          title: 'Correlation vs. Causation',
+          explanation: "Current AI systems model statistical correlations in training data. They learn that X tends to follow Y, but cannot reason about what would happen if we intervened on X, or what caused Y in the first place. Pearl's Ladder of Causation distinguishes three rungs: association (seeing), intervention (doing), and counterfactuals (imagining) — LLMs are largely confined to the first rung.",
+        },
+        {
+          title: 'No Temporal Continuity',
+          explanation: 'The world changes over time — entities evolve, relationships shift, facts become outdated. LLMs have frozen parameter knowledge from their training cutoff. They cannot track how Engine_A transitioned from healthy → overheating → repaired, or how a financial state evolved across quarters. Temporal reasoning requires explicit state-tracking infrastructure.',
+        },
+        {
+          title: 'Black-Box Reasoning',
+          explanation: 'When an LLM produces an answer, the reasoning pathway is opaque. Attention patterns provide weak post-hoc attribution but no explicit reasoning chain. For high-stakes domains — medicine, law, engineering — this opacity is unacceptable. Neuro-symbolic architectures expose explicit intermediate reasoning steps through graph traversal and causal inference.',
+        },
+        {
+          title: 'The Architecture vs. Scale Debate',
+          explanation: 'The dominant assumption is that scaling compute and data will resolve current limitations. The ELG research hypothesis rejects this: the limitations are architectural, not scalar. No amount of next-token prediction training produces persistent memory, causal intervention capability, or temporal world-model construction. A new architecture — not a larger model — is required.',
+        },
+      ],
+      milestones: [
+        { year: 1950, event: 'Alan Turing proposes the Turing Test, framing intelligence as behavioral equivalence — planting the seed of the gap between statistical simulation and genuine cognition.' },
+        { year: 1986, event: 'Rumelhart, Hinton & Williams demonstrate backpropagation, enabling statistical learning at scale but cementing the paradigm of implicit, distributed knowledge with no explicit memory.' },
+        { year: 2012, event: 'AlexNet wins ImageNet with a 15-point accuracy gap. Deep learning scales dramatically for pattern recognition, but with no world-model, no memory, and no causality.' },
+        { year: 2017, event: 'Vaswani et al. publish "Attention Is All You Need", establishing the dominant transformer architecture with self-attention but within fixed windows and with no external state.' },
+        { year: 2020, event: 'GPT-3 (175B parameters) demonstrates emergent few-shot reasoning, sparking debate about whether scale alone can reach AGI — but persistent hallucination and no causal reasoning remain.' },
+        { year: 2022, event: 'ChatGPT reaches 100M users in 60 days — first mass exposure to LLM capabilities and limitations simultaneously. The intelligence gap becomes a public concern, not just academic.' },
+        { year: 2024, event: 'GPT-4o, Claude 3.5, Gemini Ultra demonstrate multimodal capability with persistent hallucination and no causal intervention — confirming architectural limits persist regardless of scale.' },
+      ],
+      researchers: [
+        { name: 'Judea Pearl', role: 'Causal Inference Pioneer, Turing Laureate', contribution: "Formalized the Ladder of Causation (association → intervention → counterfactual), proving that pure statistical learning cannot reach the upper rungs. His do-calculus provides the mathematical foundation for causal reasoning in AI." },
+        { name: 'Gary Marcus', role: 'Cognitive Scientist & AI Critic', contribution: 'Articulated the systematic failure modes of deep learning — hallucination, brittleness, lack of compositionality — and advocated for hybrid neuro-symbolic architectures as the path beyond current limitations.' },
+        { name: 'Yann LeCun', role: 'Turing Laureate, Chief AI Scientist at Meta', contribution: 'Proposed the "world model" hypothesis: that intelligence requires predictive models of the environment, not just pattern matching. His JEPA (Joint Embedding Predictive Architecture) framework aligns with ELG goals.' },
+        { name: 'Vijayagopalan Raveendran', role: 'UAIF Architect, ELG Researcher', contribution: 'Synthesized the intelligence gap analysis into the UAIF framework, proposing the Eternal Learning Graph as the architectural bridge between current LLM capabilities and persistent, causal, temporally-grounded intelligence.' },
+      ],
+      impact: {
+        summary: 'Recognizing the intelligence gap is the prerequisite to solving it. The ELG framework addresses each limitation directly: persistent entity memory replaces transient context; the Temporal Knowledge Graph tracks world state evolution; causal reasoning replaces correlation; symbolic transparency replaces black-box inference.',
+        applications: [
+          'Medical systems tracking patient state evolution over years — not just the current visit',
+          'Engineering monitors reasoning causally from sensor readings to failure modes',
+          'Legal reasoning systems maintaining consistent entity states across case documents',
+          'Scientific discovery agents building and refining world models through hypothesis-test loops',
+        ],
+      },
+    },
+  },
+
+  {
+    id: 2,
+    number: '02',
+    title: 'Perception & Encoding',
+    subtitle: 'Multimodal Statistical Abstraction',
+    icon: '👁️',
+    equation: 'Lₜ = Encoder(Oₜ)',
+    equationLabel: 'Latent state from observation at time t',
+    accent: '#0ea5e9',
+    bg: 'from-sky-950/40 to-slate-900',
+    border: 'border-sky-900/40',
+    badge: 'bg-sky-950/60 text-sky-400 border-sky-800/50',
+    dot: 'bg-sky-500',
+    capabilities: ['Multimodal Fusion', 'Representation Learning', 'Statistical Abstraction', 'Feature Compression'],
+    quote: 'The latent space is not the world model. It is the raw material from which a world model is constructed.',
+    quoteSource: 'UAIF Design Principle',
+    connection: 'Semantic Grounding Layer',
+    detail: {
+      overview: {
+        insight: 'The latent space is not the world model. It is the raw material from which a world model is constructed.',
+        summary: 'The Perception & Encoding layer is the entry point of the Eternal Learning Graph — the interface between raw sensory experience and structured internal representations. It processes multimodal inputs (text, vision, audio, sensors, structured data) through encoder networks that compress high-dimensional observations into dense latent representations containing statistical regularities, semantic content, and relational structure.',
+        why: 'Intelligence requires converting environmental information into a form that supports reasoning. The encoding layer solves perception\'s central challenge: transforming high-dimensional, noisy sensory data into compact, semantically meaningful representations that preserve what matters for downstream reasoning. Modern transformer-based encoders excel at this compression task.',
+        significance: 'The UAIF leverages modern deep learning\'s greatest strength — perceptual encoding — by treating neural encoders as the beginning of the pipeline rather than the end. The latent representation Lₜ is the input to explicit symbolic reasoning structures, not the final answer. This is the key architectural difference from pure LLM systems.',
+      },
+      concepts: [
+        {
+          title: 'Multimodal Fusion',
+          explanation: 'Real-world perception is inherently multimodal — text, images, audio, sensor readings, and structured data all carry complementary information about the same underlying entities and events. The encoding layer must fuse these modalities into a unified latent space where different sensory channels are aligned into comparable representations, enabling cross-modal reasoning.',
+        },
+        {
+          title: 'Latent Space Geometry',
+          explanation: 'The latent space Lₜ is a high-dimensional continuous manifold where semantically similar observations cluster together. Well-trained encoders produce representations where distance in latent space reflects semantic similarity — images of the same entity from different angles map nearby; descriptions of the same event in different languages converge. This geometry enables efficient downstream grounding.',
+        },
+        {
+          title: 'Feature Compression',
+          explanation: 'Raw observations are massively high-dimensional (an image has millions of pixels; a document has thousands of tokens). Encoders learn to compress these into dense vectors (typically 768-4096 dimensions) that discard perceptually irrelevant variation while preserving semantically meaningful content. The compression ratio is the encoding layer\'s fundamental trade-off.',
+        },
+        {
+          title: 'Contrastive & Self-Supervised Learning',
+          explanation: 'Modern encoders are trained without explicit labels through contrastive objectives (CLIP, SimCLR) or masked prediction (BERT, MAE). These methods exploit the structure of unlabeled data to learn representations that generalize across downstream tasks. The UAIF leverages pre-trained encoders fine-tuned for entity-grounding objectives.',
+        },
+        {
+          title: 'Temporal Observation Streams',
+          explanation: 'In the ELG architecture, observations arrive as a continuous stream Oₜ indexed by time. The encoder must produce latent representations that carry temporal context — not just "what is there" but "what changed since the last observation". Temporal encoders (transformers with positional time embeddings, state-space models) enable this time-aware compression.',
+        },
+        {
+          title: 'Uncertainty in Encoding',
+          explanation: 'A single latent vector Lₜ cannot represent the full uncertainty of ambiguous observations. Probabilistic encoders output distributions over latent space rather than point estimates, enabling downstream components to propagate uncertainty through entity grounding and causal reasoning. This is critical for robust world-model construction.',
+        },
+      ],
+      milestones: [
+        { year: 1959, event: 'Hubel & Wiesel discover hierarchical feature detectors in the visual cortex — the biological inspiration for convolutional feature extraction and the idea of learned perceptual encoders.' },
+        { year: 1986, event: 'Backpropagation enables training of multi-layer encoders. Rumelhart\'s distributed representations demonstrate that semantic structure can emerge from training, not hand-engineering.' },
+        { year: 1998, event: 'LeCun\'s LeNet-5 demonstrates end-to-end learned convolutional encoding for digit recognition, establishing the feasibility of trainable perceptual hierarchies.' },
+        { year: 2012, event: 'AlexNet achieves breakthrough ImageNet performance using deep convolutional encoding with ReLU activations and dropout — launching the deep representation learning era.' },
+        { year: 2017, event: 'Vaswani et al. introduce Transformer self-attention. For text, this replaces recurrent encoders with parallel attention — dramatically improving contextual representation quality.' },
+        { year: 2021, event: 'CLIP (OpenAI) trains a joint vision-language encoder on 400M image-text pairs — achieving zero-shot multimodal alignment and demonstrating cross-modal latent space alignment.' },
+        { year: 2023, event: 'GPT-4V, Claude 3 and Gemini demonstrate production-grade multimodal encoding across text, image, and structured data — providing the perceptual foundation the ELG\'s encoding layer builds upon.' },
+      ],
+      researchers: [
+        { name: 'Geoffrey Hinton', role: 'Turing Laureate, Deep Learning Pioneer', contribution: 'Championed distributed representations and backpropagation, establishing the theoretical and practical foundation for trainable perceptual encoders. His work on capsule networks further addressed the geometry of latent representations.' },
+        { name: 'Yann LeCun', role: 'Turing Laureate, Convolutional Networks', contribution: 'Invented convolutional neural networks and demonstrated learned hierarchical perceptual encoding for visual data. His JEPA architecture proposes that encoders should predict abstract representations of future observations.' },
+        { name: 'Andrej Karpathy', role: 'AI Researcher, Former Tesla AI Director', contribution: 'Advanced practical multimodal encoding systems, particularly for vision-language alignment. His work on ImageNet classification and later autonomous perception encoders demonstrates encoding at industrial scale.' },
+        { name: 'Alec Radford', role: 'OpenAI Research Lead', contribution: 'Led development of CLIP and GPT encoders, demonstrating that large-scale contrastive and generative training produces latent representations that transfer across diverse downstream tasks.' },
+      ],
+      impact: {
+        summary: 'The encoding layer is the ELG\'s perceptual front-end — the component that determines what information enters the system. Its quality directly bounds the quality of entity grounding, knowledge graph construction, and causal reasoning. Strong encoders are necessary but not sufficient for intelligence.',
+        applications: [
+          'Industrial IoT encoding sensor streams into latent representations for anomaly detection and predictive maintenance',
+          'Medical imaging encoding multimodal patient data (scans, notes, labs) into unified representations for entity grounding',
+          'Autonomous systems encoding video, lidar, and map data into spatial-temporal latent representations for navigation',
+          'Scientific instruments encoding experimental outputs into representations that feed hypothesis-reasoning pipelines',
+        ],
+      },
+    },
+  },
+
+  {
+    id: 3,
+    number: '03',
+    title: 'Semantic Grounding Layer',
+    subtitle: 'Neural-to-Symbolic Bridge',
+    icon: '🔗',
+    equation: 'P(Eᵢ | Lₜ, Hₜ, Cₜ)',
+    equationLabel: 'Probabilistic entity grounding',
+    accent: '#8b5cf6',
+    bg: 'from-violet-950/40 to-slate-900',
+    border: 'border-violet-900/40',
+    badge: 'bg-violet-950/60 text-violet-400 border-violet-800/50',
+    dot: 'bg-violet-500',
+    capabilities: ['Entity Extraction', 'Symbol Grounding', 'Identity Persistence', 'Ontology Alignment'],
+    quote: 'Grounding is where meaning comes from. Without it, we have very sophisticated autocomplete. With it, we have the beginning of understanding.',
+    quoteSource: 'UAIF Research Principle',
+    connection: 'Temporal Knowledge Graph',
+    detail: {
+      overview: {
+        insight: 'Grounding is where meaning comes from. Without it, we have very sophisticated autocomplete. With it, we have the beginning of understanding.',
+        summary: 'The Semantic Grounding Layer is the most critical and most difficult component of the Eternal Learning Graph — the bridge between continuous statistical representations and discrete symbolic entities. It implements the grounding function Γ: Lₜ → Eₜ, which maps latent neural vectors to explicit entities in the knowledge graph, giving them persistent identity across observations.',
+        why: 'The symbol grounding problem, articulated by Stevan Harnad (1990), asks how symbols acquire meaning. In the ELG, the answer is through grounding to perception: symbols (entities) are meaningful because they are anchored to latent representations derived from actual observations. Without this bridge, the knowledge graph is a disconnected formal structure; with it, entities carry embodied, perceptual meaning.',
+        significance: 'Semantic grounding is one of the deepest unsolved problems in AI. Current LLMs produce entity mentions without establishing persistent identity — "Apple" might refer to the fruit, the company, or a color depending on context, with no stable cross-session entity. The grounding layer solves this by maintaining an entity registry with probabilistic identity persistence across all observations.',
+      },
+      concepts: [
+        {
+          title: 'The Symbol Grounding Problem',
+          explanation: 'Searle\'s Chinese Room (1980) argued that symbol manipulation without understanding is not intelligence. Harnad (1990) formalized this: symbols must be grounded in sensorimotor experience to have meaning. The ELG\'s grounding layer addresses this directly — every entity in the knowledge graph is anchored to latent representations derived from perceptual experience.',
+        },
+        {
+          title: 'The Grounding Function Γ: Lₜ → Eₜ',
+          explanation: 'The core operation of the semantic grounding layer is mapping latent vectors Lₜ to entity identifiers Eₜ in the knowledge graph. This is formalized as P(Eᵢ | Lₜ, Hₜ, Cₜ) — the probability that the current latent observation corresponds to entity Eᵢ, given the observation history Hₜ and current context Cₜ. This is a probabilistic, context-sensitive mapping, not a deterministic lookup.',
+        },
+        {
+          title: 'Entity Extraction & Disambiguation',
+          explanation: 'Raw latent representations typically encode multiple entities simultaneously. Entity extraction decomposes Lₜ into a set of candidate entities with associated confidence scores. Disambiguation resolves which prior entity a candidate corresponds to — using coreference resolution, entity linking, and context-aware identity matching. This is the technical heart of the grounding problem.',
+        },
+        {
+          title: 'Identity Persistence',
+          explanation: 'A key requirement of the grounding layer is that the same real-world entity maintains a stable identifier across all observations, sessions, and modalities. Engine_A seen in a sensor reading, a maintenance log, and a technician\'s verbal report must all resolve to the same entity Eᵢ. This requires cross-modal, cross-temporal identity matching under significant variation in how the entity is described.',
+        },
+        {
+          title: 'Ontology Alignment',
+          explanation: 'Entities exist within ontological hierarchies — an "engine" is a type of "mechanical system" which is a type of "physical artifact". The grounding layer must align extracted entities to the knowledge graph\'s ontology, determining not just the identity of an entity but its type, category, and parent-child relationships. Ontology evolution (adding new entity types) must be handled gracefully.',
+        },
+        {
+          title: 'Confidence & Uncertainty Propagation',
+          explanation: 'The probabilistic formulation P(Eᵢ | Lₜ, Hₜ, Cₜ) produces a distribution over possible entity groundings, not a single answer. High-uncertainty groundings (ambiguous references, novel entities) propagate uncertainty into the knowledge graph\'s entity states, enabling downstream components to reason about what is known vs. unknown. This is essential for calibrated world-model construction.',
+        },
+      ],
+      milestones: [
+        { year: 1980, event: 'Searle\'s Chinese Room thought experiment challenges behaviorist notions of intelligence, arguing that symbol manipulation without grounding cannot constitute understanding — motivating the need for grounded architectures.' },
+        { year: 1990, event: 'Stevan Harnad publishes "The Symbol Grounding Problem," formalizing the requirement that symbols acquire meaning through perceptual-sensorimotor grounding, not just syntactic manipulation.' },
+        { year: 2001, event: 'WordNet and early ontologies provide the first large-scale symbolic entity hierarchies, enabling rule-based entity disambiguation but without perceptual grounding.' },
+        { year: 2013, event: 'Mikolov et al. introduce Word2Vec — distributed word embeddings that implicitly encode semantic relationships. The first step toward continuous representations of symbolic entities.' },
+        { year: 2019, event: 'BERT and contextualized embeddings enable context-sensitive entity disambiguation, dramatically improving named entity recognition and entity linking quality at scale.' },
+        { year: 2022, event: 'GraphRAG and entity-centric retrieval architectures begin integrating LLM encoders with knowledge graphs, approaching the grounding problem from both directions simultaneously.' },
+        { year: 2024, event: 'Neuro-symbolic grounding frameworks (HippoRAG, GraphRAG variants) demonstrate persistent entity tracking across multi-turn conversations, approaching the ELG grounding vision at prototype scale.' },
+      ],
+      researchers: [
+        { name: 'John Searle', role: 'Philosopher of Mind, UC Berkeley', contribution: 'The Chinese Room argument (1980) established the philosophical necessity of grounding — demonstrating that syntactic symbol manipulation, however sophisticated, is insufficient for semantic understanding without perceptual anchoring.' },
+        { name: 'Stevan Harnad', role: 'Cognitive Scientist, University of Southampton', contribution: 'Formalized the Symbol Grounding Problem (1990), providing the theoretical framework that defines what it means for a symbol to have meaning and what properties a grounding mechanism must have.' },
+        { name: 'Pedro Domingos', role: 'AI Researcher, University of Washington', contribution: 'Developed Markov Logic Networks combining probabilistic inference with symbolic logic — an early neuro-symbolic framework that informed probabilistic approaches to entity grounding under uncertainty.' },
+        { name: 'Vijayagopalan Raveendran', role: 'UAIF Architect', contribution: 'Designed the probabilistic entity grounding formulation P(Eᵢ | Lₜ, Hₜ, Cₜ) within the ELG framework, integrating encoder outputs with knowledge graph identity persistence through a unified probabilistic API.' },
+      ],
+      impact: {
+        summary: 'The semantic grounding layer is what transforms the ELG from a sophisticated retrieval system into a system with genuine entity understanding. Grounded entities persist, accumulate attributes, and participate in causal reasoning — enabling the kind of world-model construction that underlies intelligent behavior.',
+        applications: [
+          'Medical systems maintaining persistent patient entity identity across EHR records, imaging, labs, and clinical notes',
+          'Industrial knowledge graphs grounding equipment entities across sensor streams, maintenance logs, and procurement records',
+          'Scientific literature systems tracking the same concept (protein, chemical, phenomenon) across papers, datasets, and experiments',
+          'Conversational AI maintaining consistent entity state across multi-session interactions without hallucinated identity changes',
+        ],
+      },
+    },
+  },
+
+  {
+    id: 4,
+    number: '04',
+    title: 'Temporal Knowledge Graph',
+    subtitle: 'Persistent Evolving World State',
+    icon: '🕸️',
+    equation: 'Sₜ = (Eₜ, Rₜ, Lₜ, Cₜ, Uₜ, Gₜ)',
+    equationLabel: 'Complete world state at time t',
+    accent: '#10b981',
+    bg: 'from-emerald-950/40 to-slate-900',
+    border: 'border-emerald-900/40',
+    badge: 'bg-emerald-950/60 text-emerald-400 border-emerald-800/50',
+    dot: 'bg-emerald-500',
+    capabilities: ['Entity Persistence', 'State Evolution', 'Temporal Reasoning', 'Ontology Evolution'],
+    quote: 'Sₜ = (Eₜ, Rₜ, Lₜ, Cₜ, Uₜ, Gₜ) — The complete state of the world at any moment in time.',
+    quoteSource: 'UAIF State Definition',
+    connection: 'Causal Reasoning Engine',
+    detail: {
+      overview: {
+        insight: 'Sₜ = (Eₜ, Rₜ, Lₜ, Cₜ, Uₜ, Gₜ) — The complete state of the world at any moment in time.',
+        summary: 'The Temporal Knowledge Graph (TKG) is the core of the Eternal Learning Graph — the persistent, evolving data structure that stores the system\'s world model. Unlike static knowledge graphs, the TKG tracks not just what entities exist and how they relate, but how both entities and relationships evolve over time. The state Sₜ = (Eₜ, Rₜ, Lₜ, Cₜ, Uₜ, Gₜ) encodes Entities, Relations, Latent representations, Causal models, Uncertainty distributions, and Goal structures.',
+        why: 'Intelligence requires a persistent model of the world that updates with new information. Current AI systems lack such structures — their knowledge is frozen in parameter weights at training time. The TKG functions like biological long-term memory: a structured store of what the system knows about the world, updated continuously as new observations arrive, and queryable for downstream reasoning.',
+        significance: 'The TKG enables the Eternal Learning Graph\'s persistence across sessions, knowledge accumulation over time, and evolving world understanding. It is the component that makes the ELG fundamentally different from a sophisticated query-answer system: it maintains a living model of reality that grows more accurate and comprehensive with every interaction.',
+      },
+      concepts: [
+        {
+          title: 'World State Sₜ = (Eₜ, Rₜ, Lₜ, Cₜ, Uₜ, Gₜ)',
+          explanation: 'The world state is a 6-tuple: Eₜ (the set of known entities with their current attribute values), Rₜ (the set of typed relations between entities), Lₜ (latent embeddings for each entity enabling fuzzy retrieval), Cₜ (causal models encoding which entity-state changes cause others), Uₜ (uncertainty distributions over entity attributes), and Gₜ (goal structures guiding active information gathering).',
+        },
+        {
+          title: 'Temporal State Evolution',
+          explanation: 'The TKG is not a static snapshot — it evolves with time. As new observations arrive, entity states are updated: Engine_A transitions from {status: healthy} → {status: overheating} → {status: repaired}. Temporal edges carry timestamps, enabling the system to answer time-indexed queries ("what was Engine_A\'s status at t=47?") and reason about state trajectories.',
+        },
+        {
+          title: 'Typed Relations & Ontology',
+          explanation: 'Relations in the TKG are typed (PART_OF, CAUSES, PRECEDES, INSTANCE_OF, LOCATED_IN, etc.) and carry attributes (confidence, timestamp, source). The ontology defines the type hierarchy for both entities and relations, constraining which relations are valid between which entity types. Ontology evolution — adding new types as the world model grows — must be handled without breaking existing knowledge.',
+        },
+        {
+          title: 'Entity Attribute Management',
+          explanation: 'Each entity Eᵢ has a set of time-stamped attribute-value pairs. Attribute updates can be additions (new fact learned), revisions (contradicting prior belief), or confirmations (reinforcing existing fact). The TKG maintains a belief revision policy — determining when to update, when to flag contradiction, and how to propagate attribute changes through the relation graph.',
+        },
+        {
+          title: 'Uncertainty Distributions Uₜ',
+          explanation: 'The world model is inherently uncertain. Entity attributes are known with varying confidence; relations may be inferred rather than observed directly. Uₜ encodes this uncertainty explicitly as probability distributions over attribute values. High-uncertainty entities are candidates for active information gathering — the system knows what it doesn\'t know.',
+        },
+        {
+          title: 'Graph Database Implementation',
+          explanation: 'The TKG is implemented as a property graph database (Neo4j, TigerGraph, or similar) with temporal indexing. Nodes represent entities, edges represent typed relations, and both carry timestamped property bags. Graph query languages (Cypher, GSQL) enable structured traversal for entity lookup, relation path queries, and temporal slice extraction. Embedding indices enable fuzzy neural retrieval alongside structured graph queries.',
+        },
+      ],
+      milestones: [
+        { year: 1984, event: 'Doug Lenat launches the Cyc project — the first large-scale attempt to encode common-sense world knowledge in a structured symbolic representation, demonstrating both the promise and brittleness of hand-engineered knowledge bases.' },
+        { year: 1995, event: 'WordNet provides a large lexical knowledge base with semantic relations (hypernymy, synonymy, meronymy) — the first widely-used symbolic world model for NLP systems.' },
+        { year: 2012, event: 'Google acquires Freebase and launches the Google Knowledge Graph with 500M entities — demonstrating that knowledge graphs at web scale enable significantly improved information retrieval and entity disambiguation.' },
+        { year: 2014, event: 'Wikidata launched as a free, community-maintained temporal knowledge base — establishing the viability of large-scale, openly evolving structured world knowledge.' },
+        { year: 2019, event: 'PyKEEN and temporal KG embedding methods enable machine learning over temporal knowledge graphs, learning entity and relation representations that capture temporal evolution patterns.' },
+        { year: 2022, event: 'T-KGR and temporal knowledge graph reasoning frameworks demonstrate link prediction and query answering over evolving temporal graphs, approaching the ELG\'s TKG query requirements.' },
+        { year: 2024, event: 'GraphRAG (Microsoft) combines LLM reasoning with knowledge graph traversal — the closest existing system to the ELG\'s vision of grounded, graph-backed language understanding.' },
+      ],
+      researchers: [
+        { name: 'Tom Mitchell', role: 'Machine Learning Pioneer, CMU', contribution: 'Led the NELL (Never-Ending Language Learner) project — an early continual learning system that incrementally populated a knowledge base from web text, demonstrating automated knowledge graph construction from unstructured data.' },
+        { name: 'Fabian Suchanek', role: 'Knowledge Graph Researcher, Télécom Paris', contribution: 'Developed YAGO — a knowledge base combining Wikipedia, WordNet, and GeoNames with high precision. Demonstrated temporal knowledge representation and automated knowledge base construction at scale.' },
+        { name: 'Jure Leskovec', role: 'Graph ML, Stanford University', contribution: 'Developed foundational graph neural network architectures and temporal graph learning methods that enable machine learning over evolving knowledge graph structures central to the TKG component.' },
+        { name: 'Vijayagopalan Raveendran', role: 'UAIF Architect', contribution: 'Formalized the TKG world state as Sₜ = (Eₜ, Rₜ, Lₜ, Cₜ, Uₜ, Gₜ) within the ELG framework, specifying the data model, temporal evolution semantics, and interface contracts between the TKG and the causal reasoning and memory layers.' },
+      ],
+      impact: {
+        summary: 'The TKG is what makes the ELG\'s intelligence persistent and cumulative. Every interaction enriches the world model — adding entities, refining relations, updating temporal state. Over time, the TKG becomes a comprehensive, grounded, and evolving model of the domain it observes.',
+        applications: [
+          'Industrial asset management: persistent knowledge graph of equipment, maintenance history, failure modes, and causal chains',
+          'Clinical knowledge graphs tracking patient entities, diagnoses, treatments, and outcomes across years of care',
+          'Scientific literature graphs connecting concepts, researchers, experiments, and findings across the entire published record',
+          'Supply chain graphs tracking entity states (materials, suppliers, logistics) across a continuously evolving network',
+        ],
+      },
+    },
+  },
+
+  {
+    id: 5,
+    number: '05',
+    title: 'Causal Reasoning Engine',
+    subtitle: 'Intervention, Counterfactual & Planning',
+    icon: '⚡',
+    equation: 'P(Sₜ₊₁ | do(Aₜ), Sₜ)',
+    equationLabel: 'Interventional state transition probability',
+    accent: '#f59e0b',
+    bg: 'from-amber-950/40 to-slate-900',
+    border: 'border-amber-900/40',
+    badge: 'bg-amber-950/60 text-amber-400 border-amber-800/50',
+    dot: 'bg-amber-500',
+    capabilities: ['Causal Intervention', 'Counterfactual Simulation', 'Forward Planning', 'Root Cause Analysis'],
+    quote: 'Seeing and doing are not the same. The do-operator is the mathematical gateway from correlation to causation — from understanding to intervention.',
+    quoteSource: 'Judea Pearl',
+    connection: 'Memory Architecture',
+    detail: {
+      overview: {
+        insight: 'Seeing and doing are not the same. The do-operator is the mathematical gateway from correlation to causation — from understanding to intervention.',
+        summary: 'The Causal Reasoning Engine is what elevates the ELG from a sophisticated knowledge retrieval system to a genuine reasoning architecture. Where current AI systems model correlations — "X tends to follow Y" — the causal engine models mechanisms: "X causes Y through this pathway, and if we intervene on X, Y changes in this specific way." It implements Pearl\'s do-calculus over the Temporal Knowledge Graph\'s causal model component Cₜ.',
+        why: 'Causal reasoning enables three capabilities that are categorically impossible for pure correlation-based systems: (1) predicting the effects of interventions before acting, (2) explaining observed events by tracing causal paths, and (3) answering counterfactual questions about what would have happened under different conditions. These capabilities are essential for diagnosis, planning, and scientific understanding.',
+        significance: "Pearl's Ladder of Causation distinguishes three rungs: association (seeing — P(Y|X)), intervention (doing — P(Y|do(X))), and counterfactuals (imagining — P(Yₓ|x', Y=y)). Current AI systems are largely confined to the first rung. The causal engine implements all three, enabling the ELG to reason about the world as a causal system that can be influenced, not just observed.",
+      },
+      concepts: [
+        {
+          title: "Pearl's Ladder of Causation",
+          explanation: "Judea Pearl's framework distinguishes three levels of causal reasoning: (1) Association — observing correlations in data (P(Y|X) — what is Y when we observe X?); (2) Intervention — predicting effects of actions (P(Y|do(X)) — what would Y be if we set X?); (3) Counterfactual — reasoning about hypotheticals (P(Yₓ|x', Y=y) — what would Y have been if X had been different?). The ELG's causal engine implements all three levels.",
+        },
+        {
+          title: 'do-Calculus & Interventional Distributions',
+          explanation: "Pearl's do-calculus provides the mathematical rules for computing interventional distributions P(Y|do(X)) from observational data and a causal graph. The do-operator do(X=x) denotes setting X to value x by intervention — cutting X from its normal causes and forcing the value. This is fundamentally different from conditioning on X=x (which just filters to cases where X happened to be x). The causal engine applies do-calculus over the TKG's causal model Cₜ.",
+        },
+        {
+          title: 'Causal Graph Structure',
+          explanation: 'The causal model Cₜ in the world state is a directed acyclic graph (DAG) where nodes are entity attributes and edges represent causal dependencies. Causal discovery algorithms (PC algorithm, FCI, NOTEARS) learn this structure from observational data. The causal graph enables automated identification of intervention targets, confounders, mediators, and effect modifiers — the structural vocabulary of causal reasoning.',
+        },
+        {
+          title: 'Counterfactual Simulation',
+          explanation: "Counterfactual queries ask 'what would have happened if X had been different?' — the third rung of Pearl's ladder. The ELG's causal engine answers these by: (1) abduction — inferring the exogenous noise variables that produced the observed world; (2) intervention — modifying the antecedent; (3) prediction — forward-simulating the modified world. This enables explanation of past events and evaluation of historical alternatives.",
+        },
+        {
+          title: 'Root Cause Analysis',
+          explanation: 'When an anomaly is detected in the TKG (an entity entering an unexpected state), the causal engine performs root cause analysis: tracing backward through the causal graph to identify which upstream intervention or exogenous shock most parsimoniously explains the observed anomaly. This is the inverse of forward planning — instead of "if I do X, what happens?", it asks "given Y happened, what caused it?"',
+        },
+        {
+          title: 'Forward Planning & Policy Optimization',
+          explanation: 'The causal engine enables forward planning by computing P(Sₜ₊₁|do(Aₜ), Sₜ) — the distribution over future world states given a planned intervention Aₜ from current state Sₜ. By evaluating multiple candidate actions and their causal consequences, the system can select optimal interventions to achieve goal states Gₜ. This is model-based planning grounded in explicit causal knowledge, not trial-and-error reinforcement.',
+        },
+      ],
+      milestones: [
+        { year: 1921, event: "Sewall Wright introduces path coefficients and path diagrams — the first formal representation of causal relationships in statistics, used to analyze the genetics of guinea pig coat color. Pearl's causal graphs descend directly from this work." },
+        { year: 1988, event: "Judea Pearl publishes 'Probabilistic Reasoning in Intelligent Systems', introducing Bayesian networks and laying the graphical probability foundation upon which causal inference was subsequently built." },
+        { year: 2000, event: "Pearl publishes 'Causality: Models, Reasoning, and Inference' — the definitive formalization of the do-calculus, causal graphs, and counterfactual reasoning that underpins the ELG's causal engine." },
+        { year: 2009, event: 'Peters, Mooij, and colleagues develop constraint-based and score-based causal discovery algorithms (PC, FCI, GES), enabling automated learning of causal graph structure from observational data.' },
+        { year: 2019, event: "Bernhard Schölkopf publishes 'Causality for Machine Learning', arguing that causal structure is the key to robust, out-of-distribution generalization — directly motivating the ELG's causal engine as a generalization mechanism." },
+        { year: 2021, event: 'Neural causal models (NCMs) and differentiable causal discovery methods (NOTEARS, DAG-GNN) enable end-to-end learning of causal structure from high-dimensional observational data.' },
+        { year: 2023, event: 'Causal representation learning methods demonstrate learning disentangled causal variables from raw sensory data — approaching the ELG vision of grounding causal models in perceptual observations.' },
+      ],
+      researchers: [
+        { name: 'Judea Pearl', role: 'Turing Laureate, UCLA', contribution: "Invented the mathematical framework of causal inference: Bayesian networks, do-calculus, the Ladder of Causation. Pearl's work is the direct theoretical foundation of the ELG's causal engine — without his formalization, there is no mathematically rigorous notion of intervention or counterfactual." },
+        { name: 'Bernhard Schölkopf', role: 'Director, Max Planck Institute for Intelligent Systems', contribution: "Extended causal inference to machine learning settings, demonstrating that causal structure enables out-of-distribution robustness and proposing the 'independent causal mechanisms' principle that guides the ELG's causal model design." },
+        { name: 'Jonas Peters', role: 'Professor, University of Copenhagen', contribution: 'Developed invariant causal prediction and methods for estimating causal effects in heterogeneous data — techniques directly applicable to the ELG\'s causal discovery over temporally evolving knowledge graph data.' },
+        { name: 'Vijayagopalan Raveendran', role: 'UAIF Architect', contribution: "Integrated Pearl's causal framework into the ELG architecture, designing the interface between the TKG's causal model Cₜ and the reasoning engine that computes P(Sₜ₊₁|do(Aₜ), Sₜ) for planning and counterfactual queries." },
+      ],
+      impact: {
+        summary: "The causal reasoning engine is what distinguishes the ELG from a sophisticated lookup system. With causal reasoning, the system can answer 'why?' questions, predict intervention effects before acting, diagnose root causes, and plan goal-directed sequences — the hallmarks of genuine intelligence rather than sophisticated pattern matching.",
+        applications: [
+          'Engineering diagnosis: identifying the root cause of equipment failures through backward causal inference over the TKG',
+          'Medical treatment planning: computing P(recovery|do(treatment), patient_state) to optimize therapeutic interventions',
+          'Supply chain intervention: identifying which upstream disruptions cause downstream effects and which interventions mitigate them',
+          'Scientific hypothesis evaluation: computing counterfactuals to evaluate competing causal explanations for observed phenomena',
+        ],
+      },
+    },
+  },
+
+  {
+    id: 6,
+    number: '06',
+    title: 'Memory Architecture',
+    subtitle: 'Multi-Layer Cognitive Memory System',
+    icon: '🧠',
+    equation: 'I(Eᵢ) = f(usage, causality, relevance, novelty)',
+    equationLabel: 'Memory importance score for entity Eᵢ',
+    accent: '#3b82f6',
+    bg: 'from-blue-950/40 to-slate-900',
+    border: 'border-blue-900/40',
+    badge: 'bg-blue-950/60 text-blue-400 border-blue-800/50',
+    dot: 'bg-blue-500',
+    capabilities: ['Episodic Memory', 'Semantic Memory', 'Procedural Memory', 'Memory Consolidation'],
+    quote: 'To remember everything is a form of madness. Intelligence is knowing what to keep, what to compress, and what to forget.',
+    quoteSource: 'Memory Architecture Principle',
+    connection: 'UAIF — Complete Vision',
+    detail: {
+      overview: {
+        insight: 'To remember everything is a form of madness. Intelligence is knowing what to keep, what to compress, and what to forget.',
+        summary: 'The Memory Architecture of the Eternal Learning Graph implements a biologically-inspired, multi-layer memory system that manages how information is stored, consolidated, retrieved, and forgotten. Inspired by cognitive science models of human memory — sensory, working, episodic, semantic, and procedural — the UAIF memory system ensures that the TKG grows intelligently rather than simply accumulating noise.',
+        why: 'Without active memory management, the TKG would suffer graph explosion — every observation adding new nodes and edges indefinitely, degrading query performance and signal-to-noise ratio. More fundamentally, intelligence requires not just remembering facts but knowing which facts matter. The importance score I(Eᵢ) = f(usage, causality, relevance, novelty) implements this judgment computationally.',
+        significance: 'The memory architecture addresses catastrophic forgetting in continual learning systems — the tendency of neural components to overwrite old knowledge when learning new information. By separating memory types (episodic, semantic, procedural) and managing consolidation explicitly, the ELG enables indefinite growth without forgetting critical prior knowledge.',
+      },
+      concepts: [
+        {
+          title: 'Episodic Memory',
+          explanation: 'Episodic memory stores specific, time-indexed events: "At t=142, Engine_A exhibited overheating while operating at load >80%." These are the raw observations that populate the TKG. Episodic traces are high-fidelity but voluminous — they capture context and particularity that semantic summaries lose. The ELG\'s episodic store is indexed by entity, time, and event type, enabling temporal event retrieval.',
+        },
+        {
+          title: 'Semantic Memory',
+          explanation: 'Semantic memory stores abstracted, decontextualized facts: "Engine_A is prone to overheating under high load." This is knowledge extracted and generalized from multiple episodic traces. Semantic memory is compact and efficiently queryable but loses temporal specificity. The memory architecture\'s consolidation process continuously extracts semantic knowledge from episodic traces, compressing the knowledge base.',
+        },
+        {
+          title: 'Procedural Memory',
+          explanation: 'Procedural memory stores learned action-outcome patterns: "When Engine_A overheats, reduce load and schedule maintenance" — a compiled procedure that bypasses explicit reasoning for well-rehearsed situations. Procedural knowledge is the fastest to query and the most action-relevant. The ELG compiles frequently-used causal chains into procedural memories to accelerate common-case reasoning.',
+        },
+        {
+          title: 'Memory Importance Score I(Eᵢ)',
+          explanation: 'The importance score I(Eᵢ) = f(usage, causality, relevance, novelty) determines which knowledge to retain at full fidelity, which to compress, and which to archive. Usage frequency rewards frequently-accessed facts; causal centrality rewards entities in many causal chains; relevance to current goals rewards task-pertinent knowledge; novelty rewards recently-acquired information. This multi-factor scoring implements a biologically-inspired forgetting curve.',
+        },
+        {
+          title: 'Memory Consolidation',
+          explanation: 'Consolidation is the process of transferring knowledge from episodic to semantic memory — analogous to sleep-based memory consolidation in biological systems. The ELG runs consolidation asynchronously, identifying clusters of related episodic traces and extracting general semantic facts. Consolidation also resolves contradictions between episodic and semantic memories through belief revision.',
+        },
+        {
+          title: 'Catastrophic Forgetting Prevention',
+          explanation: 'Neural components of the ELG (encoders, grounding networks) must be continuously updated without overwriting prior knowledge. Techniques from continual learning — elastic weight consolidation (EWC), progressive neural networks, replay buffers — are integrated into the memory architecture to protect critical neural knowledge during online learning. The TKG\'s symbolic component is naturally immune to catastrophic forgetting through explicit storage.',
+        },
+      ],
+      milestones: [
+        { year: 1890, event: 'William James distinguishes primary (working) and secondary (long-term) memory in "Principles of Psychology" — the first scientific taxonomy of memory types that the ELG\'s multi-layer architecture follows.' },
+        { year: 1968, event: 'Atkinson & Shiffrin publish the multi-store memory model: sensory → short-term → long-term storage with rehearsal and consolidation processes — the cognitive science foundation for the ELG memory tiers.' },
+        { year: 1986, event: 'McClelland & Rumelhart\'s complementary learning systems (CLS) theory proposes that hippocampus (fast episodic encoding) and neocortex (slow semantic consolidation) implement separate but coordinated memory systems — directly inspiring the ELG architecture.' },
+        { year: 1995, event: 'O\'Reilly & McClelland formalize the hippocampal indexing theory: the hippocampus stores episodic traces as indices that point to distributed cortical representations — a model reflected in the ELG\'s episodic-to-semantic pipeline.' },
+        { year: 2016, event: 'Graves et al. develop the Neural Turing Machine (NTM) and Differentiable Neural Computer (DNC) — architectures with explicit external memory accessed via differentiable read/write heads, demonstrating neural learning with persistent external memory.' },
+        { year: 2019, event: 'Generative replay methods (Shin et al.) address catastrophic forgetting by training a generative model to replay old experiences during new learning — an approach integrated into the ELG\'s memory consolidation pipeline.' },
+        { year: 2023, event: 'MemoryBank, MemGPT, and similar systems demonstrate extended LLM memory through external storage with automated summarization and retrieval — prototype implementations approaching the ELG\'s multi-tier memory vision.' },
+      ],
+      researchers: [
+        { name: 'John O\'Keefe', role: 'Nobel Laureate, University College London', contribution: 'Discovered place cells — neurons in the hippocampus that encode spatial location — demonstrating that biological memory is structured and spatially indexed. His work on the hippocampal memory system directly informs the ELG\'s episodic memory design.' },
+        { name: 'Edvard Moser', role: 'Nobel Laureate, NTNU', contribution: 'Discovered grid cells and the entorhinal cortex navigation system, revealing how biological memory organizes spatial and temporal context. The ELG\'s temporal indexing of episodic memory draws on this biological model.' },
+        { name: 'Jeff Hawkins', role: 'Founder, Numenta; Author of "A Thousand Brains"', contribution: 'Developed the Hierarchical Temporal Memory (HTM) framework and the thousand brains theory, proposing that cortical columns each learn complete models of the world — influencing the ELG\'s distributed, hierarchical memory architecture.' },
+        { name: 'Vijayagopalan Raveendran', role: 'UAIF Architect', contribution: 'Designed the ELG memory importance scoring function I(Eᵢ) = f(usage, causality, relevance, novelty) and the consolidation pipeline that transfers knowledge from episodic traces to semantic TKG facts, managing the multi-tier memory lifecycle.' },
+      ],
+      impact: {
+        summary: 'The memory architecture is what makes the ELG\'s intelligence sustainable. Without it, the system would either lose prior knowledge (catastrophic forgetting) or drown in an ever-growing knowledge base (graph explosion). With it, the ELG accumulates knowledge intelligently — retaining what matters, compressing what is redundant, and archiving what is rarely needed.',
+        applications: [
+          'Long-running industrial monitoring agents that learn asset behavior over years without forgetting early failure signatures',
+          'Personal AI systems maintaining a growing, prioritized model of the user\'s world, preferences, and goals across years of interaction',
+          'Scientific knowledge systems consolidating experimental results into generalized scientific knowledge without losing experimental provenance',
+          'Autonomous systems that learn from experience in dynamic environments without catastrophic forgetting of prior navigational and task knowledge',
+        ],
+      },
+    },
+  },
+
+  {
+    id: 7,
+    number: '07',
+    title: 'UAIF — Complete Vision',
+    subtitle: 'Substrate-Independent Intelligence',
+    icon: '🌌',
+    equation: 'Sₜ₊₁ = F(Sₜ, Oₜ, Aₜ, Mₜ, Πₜ)',
+    equationLabel: 'Unified state evolution law',
+    accent: '#d946ef',
+    bg: 'from-fuchsia-950/40 to-slate-900',
+    border: 'border-fuchsia-900/40',
+    badge: 'bg-fuchsia-950/60 text-fuchsia-400 border-fuchsia-800/50',
+    dot: 'bg-fuchsia-500',
+    capabilities: ['Unified Architecture', 'Self-Evolution', 'Meta-Cognition', 'Innovation Generation'],
+    quote: 'Intelligence is the continual construction, stabilization, compression, evolution, and utilization of explicit and implicit world-state representations under uncertainty across time.',
+    quoteSource: 'UAIF Definition of Intelligence',
+    connection: null,
+    detail: {
+      overview: {
+        insight: 'Intelligence is the continual construction, stabilization, compression, evolution, and utilization of explicit and implicit world-state representations under uncertainty across time.',
+        summary: 'The Unified Adaptive Intelligence Framework (UAIF) brings all seven pillars into a single, integrated cognitive architecture. The complete state evolution law Sₜ₊₁ = F(Sₜ, Oₜ, Aₜ, Mₜ, Πₜ) describes how the full world state transitions from one timestep to the next, incorporating observations Oₜ, actions Aₜ, memory consolidation Mₜ, and attention policy Πₜ into a unified dynamic system.',
+        why: 'Each individual component — perception, grounding, the TKG, causal reasoning, memory — has value only in integration. The unified framework coordinates all components: perceptual observations feed the grounding layer, which populates the TKG, which supports causal reasoning, which informs planning, which drives action, which produces new observations. Without integration, the components are sophisticated but isolated tools.',
+        significance: 'The UAIF is designed as a substrate-independent theory: the mathematical framework applies not just to AI systems but to biological brains, social organizations, scientific communities, and potentially ecosystems. Intelligence, defined as world-model construction and utilization under uncertainty, is a property of the architecture — not the substrate. This universality is what makes it a Unified Theory of Intelligence.',
+      },
+      concepts: [
+        {
+          title: 'Unified State Evolution Law',
+          explanation: 'Sₜ₊₁ = F(Sₜ, Oₜ, Aₜ, Mₜ, Πₜ) is the master equation of the UAIF. It specifies that the next world state is a function of: the current state Sₜ (what is known), new observations Oₜ (what was just perceived), executed actions Aₜ (what was just done and its effects), memory operations Mₜ (what was consolidated, forgotten, or retrieved), and the attention policy Πₜ (what the system is currently focused on). All seven pillars contribute to computing F.',
+        },
+        {
+          title: 'Meta-Cognition',
+          explanation: 'The UAIF includes a meta-cognitive layer Mₜ = Model(Sₜ) — the system\'s model of its own knowledge state. Meta-cognition enables the system to know what it doesn\'t know (epistemic uncertainty), identify gaps in its world model that require active exploration, monitor the quality of its own reasoning processes, and request clarification when queries fall outside confident knowledge regions. This is fundamentally different from confidence calibration in current LLMs.',
+        },
+        {
+          title: 'Attention Policy Πₜ',
+          explanation: 'The attention policy Πₜ determines where the system directs its perceptual and computational resources. Given the current state Sₜ and goal structures Gₜ, the attention policy selects which observations to prioritize, which entities to query, which causal chains to trace, and which memory consolidation operations to run. This goal-directed attention is what makes the UAIF an active intelligence rather than a passive information processor.',
+        },
+        {
+          title: 'Self-Evolution & Continual Learning',
+          explanation: 'The UAIF is designed for continual self-improvement without catastrophic forgetting. As the system processes more observations and interactions, it refines its encoding representations, improves its grounding accuracy, expands its causal model, and consolidates semantic knowledge. The architecture supports meta-learning — learning how to learn more effectively — and meta-reasoning — improving its own reasoning strategies based on experience.',
+        },
+        {
+          title: 'Substrate Independence',
+          explanation: 'The UAIF mathematical framework is substrate-independent: Sₜ₊₁ = F(Sₜ, Oₜ, Aₜ, Mₜ, Πₜ) applies to any system that processes observations, takes actions, maintains a world model, and has memory and attention. This includes AI systems, biological brains (where S is neural state), organizations (where S is collective knowledge), and scientific communities (where S is the body of validated knowledge). Intelligence is the architecture, not the substrate.',
+        },
+        {
+          title: 'Unified Objective Function J = αP + βC + γM + δA + εN',
+          explanation: 'The UAIF optimizes a unified objective integrating: Prediction accuracy P (world model quality), Causal coherence C (validity of causal model), Memory efficiency M (quality of consolidation and retrieval), Adaptation speed A (rate of world model refinement from new observations), and Novelty generation N (capacity to form genuinely new concepts and relations). The weights α, β, γ, δ, ε balance these objectives according to the current operational context.',
+        },
+      ],
+      milestones: [
+        { year: 1950, event: 'Alan Turing\'s "Computing Machinery and Intelligence" proposes the Imitation Game and asks "Can machines think?" — framing the central question that the UAIF answers with a precise architectural specification rather than a behavioral test.' },
+        { year: 1956, event: 'John McCarthy coins "Artificial Intelligence" at the Dartmouth Conference, launching the formal discipline. The symbolic AI paradigm established here — explicit knowledge representations and logical inference — directly informs half of the UAIF architecture.' },
+        { year: 1986, event: 'The connectionist revolution (Rumelhart, Hinton, LeCun) establishes that intelligence can emerge from learned distributed representations — the other half of the UAIF\'s neuro-symbolic integration.' },
+        { year: 2017, event: 'AlphaGo Zero demonstrates self-play learning from zero knowledge to superhuman performance in Go — proving that self-evolution through experience is possible and inspiring the UAIF\'s continual learning design.' },
+        { year: 2020, event: 'GPT-3 demonstrates emergent few-shot reasoning from scale alone — simultaneously demonstrating the potential and the limits of pure neural approaches, motivating the neuro-symbolic UAIF architecture.' },
+        { year: 2023, event: 'AutoGPT, BabyAGI, and early agentic architectures attempt multi-step goal-directed reasoning with tool use — prototype explorations in the direction of the UAIF\'s integrated perception-reasoning-action loop.' },
+        { year: 2026, event: 'Vijayagopalan Raveendran formalizes the UAIF framework and Eternal Learning Graph architecture — providing the first complete mathematical specification of a neuro-symbolic, temporally-grounded, causally-reasoning, memory-managed intelligence architecture.' },
+      ],
+      researchers: [
+        { name: 'Alan Turing', role: 'Founding Father of Computer Science and AI', contribution: 'Established the theoretical foundations of computation and proposed the first rigorous framing of machine intelligence. The UAIF answers his question with a constructive architectural proposal rather than a behavioral test.' },
+        { name: 'John McCarthy', role: 'Founder of Artificial Intelligence', contribution: 'Coined the term "AI" and pioneered symbolic AI, including Lisp and situation calculus — the symbolic reasoning tradition that the UAIF integrates with neural perception and learning.' },
+        { name: 'Geoffrey Hinton & Yoshua Bengio', role: 'Turing Laureates, Deep Learning Pioneers', contribution: 'Established deep learning as the dominant paradigm for perceptual encoding and statistical learning — providing the neural half of the UAIF\'s neuro-symbolic integration.' },
+        { name: 'Vijayagopalan Raveendran', role: 'UAIF Architect, Independent Researcher', contribution: 'Synthesized the UAIF framework integrating perception, grounding, temporal knowledge graphs, causal reasoning, and multi-layer memory into a unified, substrate-independent theory of intelligence expressed as Sₜ₊₁ = F(Sₜ, Oₜ, Aₜ, Mₜ, Πₜ).' },
+      ],
+      impact: {
+        summary: 'The UAIF represents the complete vision: an AI architecture that perceives the world, grounds observations in persistent entity identity, maintains a temporally-evolving world model, reasons causally about interventions, manages memory intelligently, and integrates all components into a self-evolving intelligence. It is a blueprint for the next paradigm of AI.',
+        applications: [
+          'Scientific discovery engines that build, refine, and query comprehensive world models of entire research domains',
+          'Autonomous industrial agents that monitor, diagnose, plan, and act across complex multi-asset environments indefinitely',
+          'Personal intelligence systems that maintain a lifelong, evolving model of an individual\'s world — relationships, goals, knowledge, and history',
+          'Civilizational knowledge systems that aggregate, reconcile, and reason over the full body of human understanding across all domains',
+        ],
+      },
+    },
+  },
+]
+
+export const elgMeta = {
+  title: 'Unified Theory of Intelligence — Eternal Learning Graph',
+  subtitle: 'A neuro-symbolic cognitive architecture integrating latent neural representations with persistent temporal knowledge graphs, causal reasoning, and adaptive world-model construction.',
+  equation: 'Sₜ₊₁ = F(Sₜ, Oₜ, Aₜ, Mₜ, Πₜ)',
+  equationLabel: 'Unified state evolution law',
+  objective: 'J = αP + βC + γM + δA + εN',
+  objectiveLabel: 'Prediction · Causality · Memory · Adaptation · Novelty',
+  prototypes: [
+    {
+      id: 'P1',
+      title: 'Persistent Entity Memory for LLMs',
+      description: 'Store explicit entities extracted from conversations, maintain temporal state changes, and retrieve them across sessions.',
+      stack: ['Python', 'Neo4j', 'LangChain', 'Open-source LLM'],
+    },
+    {
+      id: 'P2',
+      title: 'Temporal Knowledge Graph Engine',
+      description: 'Track evolving entity states over time with causal relation tracking. Example: Engine_A: healthy → overheating → damaged → repaired.',
+      stack: ['Python', 'Neo4j', 'PyTorch Geometric'],
+    },
+    {
+      id: 'P3',
+      title: 'Neuro-Symbolic Reasoner',
+      description: 'Pipeline: Encoder → Latent Embedding → KG Mapping → Symbolic Reasoning → Decoder. Combines neural abstraction with explicit graph inference.',
+      stack: ['Python', 'Hugging Face', 'NetworkX', 'PyKEEN'],
+    },
+    {
+      id: 'P4',
+      title: 'Cross-Domain Analogy Generator',
+      description: 'Discover structural similarities between unrelated knowledge domains. Example: Biology ↔ Economics ↔ Network Theory via shared graph patterns.',
+      stack: ['Python', 'Graph Neural Networks', 'LLM'],
+    },
+  ],
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uti-evolution.vercel.app/sitemap.xml
